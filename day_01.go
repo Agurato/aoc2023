@@ -5,7 +5,10 @@ import (
 	"unicode"
 )
 
-func Day01Part1(lines []string) int {
+type Day01 struct {
+}
+
+func (d Day01) Part1(lines []string) int {
 	sum := 0
 
 	for _, line := range lines {
@@ -29,7 +32,7 @@ func Day01Part1(lines []string) int {
 	return sum
 }
 
-func Day01Part2(lines []string) int {
+func (d Day01) Part2(lines []string) int {
 	sum := 0
 
 	for _, line := range lines {
@@ -40,7 +43,7 @@ func Day01Part2(lines []string) int {
 				sum += 10 * int(r-'0')
 				break
 			}
-			val, found := checkSpelledOutDigits(runes[i:])
+			val, found := d.checkSpelledOutDigits(runes[i:])
 			if found {
 				sum += 10 * val
 				break
@@ -52,7 +55,7 @@ func Day01Part2(lines []string) int {
 				sum += int(r - '0')
 				break
 			}
-			val, found := checkSpelledOutDigits(runes[i:])
+			val, found := d.checkSpelledOutDigits(runes[i:])
 			if found {
 				sum += val
 				break
@@ -63,7 +66,7 @@ func Day01Part2(lines []string) int {
 	return sum
 }
 
-func checkSpelledOutDigits(runes []rune) (int, bool) {
+func (d Day01) checkSpelledOutDigits(runes []rune) (int, bool) {
 	s := string(runes)
 	switch {
 	case strings.HasPrefix(s, "one"):
