@@ -11,7 +11,7 @@ func Test_Day02(t *testing.T) {
 	d := Day02{}
 
 	t.Run("Part 1 Example", func(t *testing.T) {
-		lines, err := getInputExample(2)
+		lines, err := getInputExample(2, readLines)
 		require.NoError(t, err)
 
 		value := d.Part1(lines)
@@ -19,7 +19,7 @@ func Test_Day02(t *testing.T) {
 	})
 
 	t.Run("Part 1", func(t *testing.T) {
-		lines, err := getInput(2)
+		lines, err := getInput(2, readLines)
 		require.NoError(t, err)
 
 		value := d.Part1(lines)
@@ -27,7 +27,7 @@ func Test_Day02(t *testing.T) {
 	})
 
 	t.Run("Part 2 Example", func(t *testing.T) {
-		lines, err := getInputExample(2)
+		lines, err := getInputExample(2, readLines)
 		require.NoError(t, err)
 
 		value := d.Part2(lines)
@@ -35,7 +35,7 @@ func Test_Day02(t *testing.T) {
 	})
 
 	t.Run("Part 2", func(t *testing.T) {
-		lines, err := getInput(2)
+		lines, err := getInput(2, readLines)
 		require.NoError(t, err)
 
 		value := d.Part2(lines)
