@@ -31,6 +31,15 @@ func readLines(path string) ([]string, error) {
 	return strings.Split(strings.ReplaceAll(string(content), "\r", ""), "\n"), nil
 }
 
+// readCommas returns slice of the file's separated by commas
+func readCommas(path string) ([]string, error) {
+	content, err := os.ReadFile(path)
+	if err != nil {
+		return nil, err
+	}
+	return strings.Split(strings.ReplaceAll(string(content), "\r", ""), ","), nil
+}
+
 // readLines returns slice of the file's lines
 func readRunes(path string) ([][]rune, error) {
 	file, err := os.Open(path)
